@@ -59,6 +59,22 @@ module WeekOfMonth
         end
       end
     end
-   
+
+    # returns date of last day of month for a given date.
+    # Date.new(2012,11,1).end_of_month
+    #   => #<Date: 2012-11-30 ((2456262j,0s,0n),+0s,2299161j)>
+    # @return [Date]
+    def end_of_day
+      self.class.new(year,month,day,23,59,59,999)
+    end
+
+    # returns date of first day of month for a given date.
+    # Date.new(2012,11,1).beginning_of_month
+    #   => #<Date: 2012-11-01 ((2456233j,0s,0n),+0s,2299161j)>
+    # @return [Date]
+    def beginning_of_day
+      self.class.new(year,month,day,0,0,0,0)
+    end
+
   end
 end
